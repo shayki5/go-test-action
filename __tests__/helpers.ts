@@ -26,12 +26,6 @@ export const createSummaryFile = async () => {
   core.summary.emptyBuffer()
 }
 
-export const removeSummaryFile = async () => {
-  delete process.env['GITHUB_STEP_SUMMARY']
-  await fs.unlink(testSummaryFilePath)
-  core.summary.emptyBuffer()
-}
-
 export const setupActionsInputs = () => {
   process.env['INPUT_MODULEDIRECTORY'] = testModuleDirectory
   process.env['INPUT_TESTARGUMENTS'] = testArguments

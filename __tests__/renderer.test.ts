@@ -6,7 +6,6 @@ import {
   mockActionsCoreLogging,
   createFakeGoModule,
   createSummaryFile,
-  removeSummaryFile,
   testSummaryFilePath,
 } from './helpers'
 import { parseTestEvents } from '../src/events'
@@ -39,10 +38,6 @@ describe('renderer', () => {
   beforeEach(async () => {
     mockActionsCoreLogging()
     await createSummaryFile()
-  })
-
-  afterEach(async () => {
-    await removeSummaryFile()
   })
 
   it('calculates package results and conclusions', async () => {
